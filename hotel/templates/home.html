@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+      .card img {
+            max-width: 100%;
+            height: auto;
+            max-height: 300px;
+        }
+</style>
+
+<div class="container-fluid">
+    <div class="row" >
+        <h1>Cafe Gallery</h1>
+    {% for obj in cafe_obj %}
+    
+        <div class="card" style="width: 25rem;">
+            <img src="{{obj.img1.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title ">{{obj.cafe_name}}</h5>
+            <a href="http://127.0.0.1:8000/cafe/menu/{{obj.id}}" class="btn btn-primary"> Contact</a>
+            </div>
+        </div>
+      
+    {% endfor %} 
+    </div>
+</div>
+
+{% endblock content %}
